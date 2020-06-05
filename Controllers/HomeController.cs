@@ -16,21 +16,18 @@ namespace DojoSurveyWithModel.Controllers
             return View();
         }
 
-
         [HttpPost("")]
-        public RedirectToActionResult HandleFormSubmission(string Name, string Location, string Language, string Comment)
+        public IActionResult HandleFormSubmission(Survey survey)
         {
-            return RedirectToAction("Result", new{name = Name, location = Location, language = Language, comment = Comment});
+            if (ModelState.IsValid)
+            {
+                return View("Result", survey);
+            }
+            else
+            {
+                return View("Index");
+            }
         } 
-
-
-        [HttpGet("result")]
-        public IActionResult Result(string name, string location, string language, string comment)
-        {
-            Survey survey = new Survey(name, location, language, comment);
-            return View("Result", survey);
-        }
-
 
         public IActionResult Privacy()
         {

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row text-center">
+    <div class="col-12">
+        <h1 class="display-4">Take a Survey</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <form action="/" method="post">
+            <label>Your name:</label>
+            <div class="form-group">
+                <input class="form-control" type="text" name="Name" />
+            </div>
+            <label>Dojo Location:</label>
+            <div class="form-group">
+                <select class="form-control" name="Location">
+                    <option></option>
+                    <option>Seattle</option>
+                    <option>San Jose</option>
+                    <option>Boise</option>
+                </select>
+            </div>
+            <label>Favorite Language:</label>
+            <div class="form-group">
+                <select class="form-control" name="Language">
+                    <option></option>
+                    <option>Python</option>
+                    <option>JavaScript</option>
+                    <option>C#</option>
+                </select>
+            </div>
+            <label>Comment:</label>
+            <div class="form-group">
+                <textarea class="form-control" name="Comment"></textarea>
+            </div>
+            <div class="form-group text-right">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

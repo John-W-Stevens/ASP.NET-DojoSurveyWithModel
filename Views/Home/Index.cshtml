@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Survey
+
 <div class="row text-center">
     <div class="col-12">
         <h1 class="display-4">Take a Survey</h1>
@@ -10,32 +12,33 @@
 
 <div class="row">
     <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+
         <form action="/" method="post">
-            <label>Your name:</label>
             <div class="form-group">
-                <input class="form-control" type="text" name="Name" />
+                <label asp-for="Name">Your name:</label>&nbsp&nbsp<span asp-validation-for="Name" class="error"></span>
+                <input class="form-control" asp-for="Name" />
             </div>
-            <label>Dojo Location:</label>
             <div class="form-group">
-                <select class="form-control" name="Location">
+                <label asp-for="Location">Dojo Location:</label>&nbsp&nbsp<span asp-validation-for="Location" class="error"></span>
+                <select class="form-control" asp-for="Location">
                     <option></option>
                     <option>Seattle</option>
                     <option>San Jose</option>
                     <option>Boise</option>
                 </select>
             </div>
-            <label>Favorite Language:</label>
             <div class="form-group">
-                <select class="form-control" name="Language">
+                <label asp-for="Language">Favorite Language:</label>&nbsp&nbsp<span asp-validation-for="Language" class="error"></span>
+                <select class="form-control" asp-for="Language">
                     <option></option>
                     <option>Python</option>
                     <option>JavaScript</option>
                     <option>C#</option>
                 </select>
             </div>
-            <label>Comment:</label>
             <div class="form-group">
-                <textarea class="form-control" name="Comment"></textarea>
+                <label asp-for="Comment">Comment:</label>&nbsp&nbsp<span asp-validation-for="Comment" class="error"></span>
+                <textarea class="form-control" asp-for="Comment"></textarea>
             </div>
             <div class="form-group text-right">
                 <button class="btn btn-primary">Submit</button>
